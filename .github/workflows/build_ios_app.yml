@@ -19,5 +19,5 @@ jobs:
           xcodebuild clean build test \
             -project Github\ Actions\ Build.xcodeproj \
             -scheme Github\ Actions\ Build \
-            -destination 'platform=iOS Simulator,name=iPhone 16,OS=18.2' \
+            -destination 'platform=iOS Simulator,name=iPhone 16,id=03943A75-BECC-4676-B3EE-4CE2CEFFD4A5,OS=18.3.1' \
           clean archive
