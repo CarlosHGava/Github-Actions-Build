@@ -6,7 +6,7 @@ on:
 
 jobs:
   build_with_signing:
-    runs-on: macos-latest
+    runs-on: self-hosted
     steps:
       - name: Verificando a versão do Xcode 
         run: /usr/bin/xcodebuild -version
