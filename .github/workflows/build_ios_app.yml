@@ -17,8 +17,7 @@ jobs:
       - name: Gerando a build
         run: |
           xcodebuild clean build test \
-            -project YourApp.xcodeproj \
-            -scheme YourAppScheme \
+            -project Github\ Actions\ Build.xcodeproj \
+            -scheme Github\ Actions\ Build \
             -destination 'platform=iOS Simulator,name=iPhone 15,OS=17.2' \
-            | xcpretty -s
           clean archive
