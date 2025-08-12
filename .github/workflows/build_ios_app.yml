@@ -16,9 +16,9 @@ jobs:
 
       - name: Gerando a build
         run: |
-          xcodebuild -scheme "I am Groot" \
-          -archivePath $RUNNER_TEMP/iamgroot.xcarchive \
-          -sdk iphoneos \
-          -configuration Debug \
-          -destination generic/platform=iOS \
+          xcodebuild clean build test \
+            -project YourApp.xcodeproj \
+            -scheme YourAppScheme \
+            -destination 'platform=iOS Simulator,name=iPhone 15,OS=17.2' \
+            | xcpretty -s
           clean archive
