@@ -32,5 +32,5 @@ jobs:
           -sdk iphoneos \
           -configuration Debug \
           -destination generic/platform=iOS \
-          clean test-without-building 
+          clean test
         
