@@ -18,15 +18,18 @@ jobs:
         run: |
           xcodebuild -project "Github Actions Build.xcodeproj" \
           -scheme "Github Actions Build" \
+          -target "Github Actions Build"
           -archivePath $RUNNER_TEMP/githubactions.xcarchive \
           -sdk iphoneos \
           -configuration Debug \
           -destination generic/platform=iOS \
           clean archive
+          
       - name: Executando os testes de unitários
         run: |
           xcodebuild -project "Github Actions Build.xcodeproj" \
-          -scheme "Github Actions BuildTests" \
+          -scheme "Github Actions Build" \
+          -target "Github Actions BuildTests"
           -sdk iphoneos \
           -configuration Debug \
           -destination generic/platform=iOS \
