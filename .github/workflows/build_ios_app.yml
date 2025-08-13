@@ -27,9 +27,9 @@ jobs:
       - name: Executando os testes de unitários
         run: |
           xcodebuild -project "Github Actions Build.xcodeproj" \
-          -target "Github Actions BuildTests" \
+          -scheme "Github Actions Build" \
           -sdk iphoneos \
           -configuration Debug \
           -destination generic/platform=iOS \
-          build-for-testing
+          build-for-testing 
         
