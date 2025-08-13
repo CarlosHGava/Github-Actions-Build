@@ -5,7 +5,7 @@ on:
     branches: [main]
 
 jobs:
-  build_with_signing:
+  build:
     runs-on: self-hosted
     steps:
       - name: Verificando a versão do Xcode 
@@ -16,7 +16,10 @@ jobs:
 
       - name: Gerando a build
         run: |
-          xcodebuild clean build test \
-            -project Github\ Actions\ Build.xcodeproj \
-            -destination 'platform=iOS Simulator,name=iPhone 16,id=03943A75-BECC-4676-B3EE-4CE2CEFFD4A5,OS=18.3.1' \
+          xcodebuild -project "Github Actions Build.xcodeproj" \
+          -scheme "Github Actions Build" \
+          -archivePath $RUNNER_TEMP/githubactions.xcarchive \
+          -sdk iphoneos \
+          -configuration Debug \
+          -destination generic/platform=iOS \
           clean archive
