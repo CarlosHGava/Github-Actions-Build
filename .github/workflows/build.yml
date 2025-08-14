@@ -1,10 +1,11 @@
 name: Build, Test and Analize
 
-on: 
-  pull_request_review:
-    branches: [ $default_branch ]
-    types: [submitted]
+#on: 
+#  pull_request_review:
+#    branches: [ $default_branch ]
+#    types: [submitted]
 
+on: workflow_dispatch
 jobs:
   approved:
     #if: github.event.review.state == "approved"
